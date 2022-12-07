@@ -8,7 +8,7 @@
   <input class="mt-2 mb-2 border border-1 rounded border border-dark" formControlName="password" type="password" placeholder="Enter password" >
   <span *ngIf="loginuserform.get('password')?.invalid && loginuserform.get('password')?.touched" style="color:rgb(190, 47, 47)">Enter Valid Password of min 6 characters</span>
   <div class="row">
-    <div class="col-2">
+    <div class="col-2"> 
       
         
   <button [disabled]="loginuserform.invalid" class="mt-2 bg-primary mb-2 border border-1 rounded border border-dark" style="width: 100px; position:relative; left:130px">login</button>
