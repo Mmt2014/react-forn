@@ -1,17 +1,35 @@
 
 
-    <div class="container bg-warning border border-2 rounded border border-dark " style="height:500px;width:400px;margin-top: 200px;">
-<form [formGroup]="loginuserform" (ngSubmit)="userlogin()">
-  <div class="d-flex flex-column" style="position:relative; top:170px">
+    <div class="container border border-2 rounded border border-dark " style="height:500px;width:400px;margin-top: 170px;background: linear-gradient(to bottom, #cc0000 0%, #0099ff 100%);">
+      <div class="container">
+        <div class="d-flex justify-content-center mt-4">
+      <img src="https://png.pngtree.com/element_pic/00/16/07/06577d261edb9ec.jpg" class="border border-dark rounded-circle" height="100px" width="100px" alt="logo"> 
+      </div>
+      </div>
+      <div class="d-flex mt-4 justify-content-center text-white" style="position:relative;top: 30px;"><h4>WELCOME {{greeting | trimString:17}}</h4></div>
+      <form [formGroup]="loginuserform" (ngSubmit)="userlogin()">
+  <div class="d-flex flex-column" style="position:relative; top:65px">
   <input class="mt-2 mb-2 border border-1 rounded border border-dark" formControlName="username" type="text" placeholder="Enter username" >
   <span *ngIf="loginuserform.get('username')?.invalid && loginuserform.get('username')?.touched" style="color:rgb(190, 47, 47)">Enter a valid Username</span>
   <input class="mt-2 mb-2 border border-1 rounded border border-dark" formControlName="password" type="password" placeholder="Enter password" >
   <span *ngIf="loginuserform.get('password')?.invalid && loginuserform.get('password')?.touched" style="color:rgb(190, 47, 47)">Enter Valid Password of min 6 characters</span>
+  <div class="container mt-3" style="padding-right:70px;">
+    <div class="d-flex justify-content-around">
+    
+    <div class="col-2"> 
+      
+        
+  <button [disabled]="loginuserform.invalid" class="mt-2 bg-success mb-2 border border-1 rounded border border-dark" style="width: 100px">login</button>
+  
+  </div>
+
+    </div>
+  </div>
   <div class="row">
     <div class="col-2"> 
       
         
-  <button [disabled]="loginuserform.invalid" class="mt-2 bg-primary mb-2 border border-1 rounded border border-dark" style="width: 100px; position:relative; left:130px">login</button>
+  <p class="text-white fw-bold" style="width: 100px; position:relative; left:285px;top: -394px;">{{createDate | date |uppercase}}</p>
   
   </div>
   </div>
@@ -19,5 +37,11 @@
   
 
 </form>
+<div class="col-2"> 
+      
+         
+  <button class="mt-2 bg-secondary mb-2 border border-1 rounded border border-dark" style="width: 100px; position:relative; left:132px; top:20px" (click)="fetchdata()">Fetch</button>
+  
+  </div>
 </div>
 
